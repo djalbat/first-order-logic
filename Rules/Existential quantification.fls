@@ -1,0 +1,19 @@
+Rule (ExistentialIntroduction,ExistentialGeneralisation)
+  Premises
+    P[w/u]
+    u is free in P
+    v is undefined 
+    w is undefined
+  Conclusion
+    ∃v P[v/u]
+
+Rule (ExistentialElimination,ExistentialInstantiation)
+  Premises
+    ∃v P[v/u]
+    u is free in P
+    v is undefined
+    w is undefined
+    w is not in Q
+    P[w/u]=>Q
+  Conclusion
+    Q

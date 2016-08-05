@@ -1,0 +1,17 @@
+Rule (UniversalIntroduction,UniversalGeneralisation)
+  Premises
+    P
+    u is free in P
+    u is undefined
+    v is undefined 
+  Conclusion
+    ∀v P[v/u]
+
+Rule (UniversalElimination,UniversalInstantiation)
+  Premises
+    ∀v P[v/u]
+    v is undefined 
+    u is undefined
+    u is free in P
+  Conclusion
+    P
