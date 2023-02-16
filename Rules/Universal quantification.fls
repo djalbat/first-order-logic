@@ -1,3 +1,4 @@
+###
 Rule (UniversalIntroduction,UniversalGeneralisation)
   Premises
     P
@@ -15,3 +16,4 @@ Rule (UniversalElimination,UniversalInstantiation)
     u is free in P
   Conclusion
     P
+###

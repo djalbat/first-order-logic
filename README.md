@@ -1,11 +1,7 @@
-# First Order Logic
+# Fist Order Logic
 
-An implementation of first order logic for the [Occam](http://djalbat.com/occam) proof assistant.
-
-Unlike the implementation of [propositional logic](https://github.com/jecs-imperial/Propositional-Logic), this is something of a work in progress.
+First order logic for [Occam](https://occam.science).
 
 ## Contact
 
-* jecs@imperial.ac.uk
-* http://djalbat.com
-
+* https://djalbat.com
