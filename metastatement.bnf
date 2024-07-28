@@ -1,0 +1,16 @@
+
+
+                              metastatement  ::=  freeAssertion 
+
+                                               |   undefinedAssertion
+
+                                               |   universallyQuantifiedMetastatement
+
+                                               ;
+
+
+                 
+                              freeAssertion  ::=  variable "is" ( "not" | "free" ) "in" metastatement ;
+
+
+         universallyQuantifiedMetastatement  ::=  "∀" variable metastatement ;
