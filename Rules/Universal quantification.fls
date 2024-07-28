@@ -4,7 +4,7 @@ Rule (UniversalIntroduction,UniversalGeneralisation)
     u is undefined
     v is undefined 
     u is free in P
-    v is not in P
+    P omits v
   Conclusion
     ∀v P[v for u]
 
@@ -14,6 +14,6 @@ Rule (UniversalElimination,UniversalInstantiation)
     u is undefined
     v is undefined 
     u is free in P
-    v is not in P
+    P omits v
   Conclusion
     P

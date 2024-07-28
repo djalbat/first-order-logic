@@ -1,16 +1,16 @@
 
 
-                              metastatement  ::=  freeAssertion 
+                              metastatement  ::=  quantifiedMetastatement
 
-                                               |   undefinedAssertion
-
-                                               |   universallyQuantifiedMetastatement
+                                               |  bindingAssertion 
 
                                                ;
 
 
                  
-                              freeAssertion  ::=  variable "is" ( "not" | "free" ) "in" metastatement ;
+                    quantifiedMetastatement  ::=  ( "∀" | "∃" )<NO_WHITESPACE>variable metastatement ;
 
 
-         universallyQuantifiedMetastatement  ::=  "∀" variable metastatement ;
+                           bindingAssertion  ::=  variable "is" ( "bound" | "free" ) "in" metastatement ;
+
+
