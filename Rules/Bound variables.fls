@@ -1,0 +1,53 @@
+Rule (BoundVariable)
+  Premise
+    x is free in P
+  Conclusion
+    x is bound in ∀x P
+
+Rule (BoundNegation)
+  Premise
+    x is bound in P
+  Conclusion
+    x is bound in ¬P
+
+Rule (BoundConjunction)
+  Premise
+    x is bound in P
+  Conclusion
+    x is bound in (P ∧ Q)
+
+Rule (BoundDisjunction)
+  Premise
+    x is bound in P
+  Conclusion
+    x is bound in (P ∨ Q)
+
+Rule (BoundBiconditinoal)
+  Premise
+    x is bound in P
+  Conclusion
+    x is bound in (P iff Q)
+    
+Rule (BoundLeftImplication)
+  Premise
+    x is bound in P
+  Conclusion
+    x is bound in (P ⇒ Q)
+    
+Rule (BoundRightImplication)
+  Premise
+    x is bound in Q
+  Conclusion
+    x is bound in (P ⇒ Q)
+    
+Rule (BoundLeftMaterialConditional)
+  Premise
+    x is bound in P
+  Conclusion
+    x is bound in (P → Q)
+    
+Rule (BoundRightMaterialConditional)
+  Premise
+    x is bound in Q
+  Conclusion
+    x is bound in (P → Q)

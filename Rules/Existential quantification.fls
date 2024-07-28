@@ -1,19 +1,18 @@
-Axiom (ExistentialIntroduction,ExistentialGeneralisation)
-  Suppose
-    P[w/u]
+Rule (ExistentialIntroduction,ExistentialGeneralisation)
+  Premises
+    P[v for u]
+    u is undefined 
     u is free in P
-    v is undefined 
-    w is undefined
-  Then
-    ∃v P[v/u]
+    v is defined
+  Conclusion
+    ∃v P[v for u]
 
-Axiom (ExistentialElimination,ExistentialInstantiation)
-  Suppose
-    ∃v P[v/u]
+Rule (ExistentialElimination,ExistentialInstantiation)
+  Premises
+    ∃v P[v for u]
+    u is undefined 
     u is free in P
-    v is undefined
-    w is undefined
-    w is not in Q
-    P[w/u]=>Q
-  Then
+    Q omits v
+    P[v for u] ⇒ Q
+  Conclusion
     Q

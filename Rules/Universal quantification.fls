@@ -2,8 +2,8 @@ Rule (UniversalIntroduction,UniversalGeneralisation)
   Premises
     P
     u is undefined
-    v is undefined 
     u is free in P
+    v is undefined 
     P omits v
   Conclusion
     ∀v P[v for u]
@@ -12,8 +12,8 @@ Rule (UniversalElimination,UniversalInstantiation)
   Premises
     ∀v P[v for u]
     u is undefined
-    v is undefined 
     u is free in P
+    v is undefined 
     P omits v
   Conclusion
     P
