@@ -1,50 +1,50 @@
-Variable x
+Variable u
 
 Metavariable P:Statement
 Metavariable Q:Statement
 
 Rule (FreeVariable)
   Premise
-    P contains x
+    P contains u
   Conclusion
-    x is free in P
+    u is free in P
 
 Rule (FreeNegation)
   Premise
-    x is free in P
+    u is free in P
   Conclusion
-    x is free in ¬P
+    u is free in ¬P
 
 Rule (FreeConjunction)
   Premises
-    x is free in P
-    x is free in Q
+    u is free in P
+    u is free in Q
   Conclusion
-    x is free in (P ∧ Q)
+    u is free in (P ∧ Q)
 
 Rule (FreeDisjunction)
   Premise
-    x is free in P
+    u is free in P
   Conclusion
-    x is free in (P ∨ Q)
+    u is free in (P ∨ Q)
 
 Rule (FreeBiconditinoal)
   Premises
-    x is free in P
-    x is free in Q
+    u is free in P
+    u is free in Q
   Conclusion
-    x is free in (P iff Q)
+    u is free in (P iff Q)
     
 Rule (FreeImplication)
   Premises
-    x is free in P
-    x is free in Q
+    u is free in P
+    u is free in Q
   Conclusion
-    x is free in (P ⇒ Q)
+    u is free in (P ⇒ Q)
     
 Rule (FreeMaterialConditional)
   Premises
-    x is free in P
-    x is free in Q
+    u is free in P
+    u is free in Q
   Conclusion
-    x is free in (P → Q)
+    u is free in (P → Q)

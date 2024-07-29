@@ -1,3 +1,9 @@
+Variable u
+Variable v
+
+Metavariable P:Statement
+Metavariable Q:Statement
+
 Rule (ExistentialIntroduction,ExistentialGeneralisation)
   Premises
     P[v for u]

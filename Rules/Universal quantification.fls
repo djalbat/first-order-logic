@@ -1,3 +1,9 @@
+Variable u
+Variable v
+
+Metavariable P:Statement
+Metavariable Q:Statement
+
 Rule (UniversalIntroduction,UniversalGeneralisation)
   Premises
     P
