@@ -1,0 +1,7 @@
+{
+  "version": "1.0.4",
+  "repository": "https://github.com/djalbat/first-order-logic",
+  "dependencies": {
+    "material-conditional": "2.0"
+  }
+}
