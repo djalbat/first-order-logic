@@ -1,0 +1,7 @@
+
+
+                                  statement  ::=  quantifiedStatement ;
+
+                 
+                        quantifiedStatement  ::=  ( "∀" | "∃" )<NO_WHITESPACE>variable metaArgument ;
+
