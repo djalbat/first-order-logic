@@ -1,16 +1,7 @@
 
 
-                              metastatement  ::=  quantifiedMetastatement
+                          metastatement  ::=  ( "∀" | "∃" )<NO_WHITESPACE>argument metastatement
 
-                                               |  metaBindingAssertion 
+                                           |  argument "is" ( "bound" | "free" ) "in" metastatement 
 
-                                               ;
-
-
-                 
-                    quantifiedMetastatement  ::=  ( "∀" | "∃" )<NO_WHITESPACE>variable metastatement ;
-
-
-                       metaBindingAssertion  ::=  variable "is" ( "bound" | "free" ) "in" metastatement ;
-
-
+                                           ;
