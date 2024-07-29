@@ -1,7 +1,14 @@
 
 
-                                  statement  ::=  quantifiedStatement ;
+                                  statement  ::=  quantifiedStatement 
+
+                                               |  bindingAssertion
+
+                                               ;
 
                  
                         quantifiedStatement  ::=  ( "∀" | "∃" )<NO_WHITESPACE>variable metaArgument ;
+
+
+                           bindingAssertion  ::=  variable "is" ( "bound" | "free" ) "in" metaArgument ;
 
