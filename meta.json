@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.2",
   "repository": "https://github.com/djalbat/first-order-logic",
   "dependencies": {
     "material-conditional": "2.0"
