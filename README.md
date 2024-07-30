@@ -11,7 +11,7 @@ P\;\;
 u\;\textsf{is}\;\textsf{undefined}\;\;
 u\;\textsf{is}\;\textsf{free}\;\textsf{in}\;P\;\;
 v\;\textsf{is}\;\textsf{undefined}\;\;
-P\;\textsf{omits}\;v\;\;
+v\;\textsf{is}\;\textsf{omitted}\;\textsf{from}\;P\;\;
 }
 {
 \forall v\;P[v\;\textsf{for}\;u]
@@ -27,7 +27,7 @@ P\;\textsf{omits}\;v\;\;
 u\;\textsf{is}\;\textsf{undefined}\;\;
 u\;\textsf{is}\;\textsf{free}\;\textsf{in}\;P\;\;
 v\;\textsf{is}\;\textsf{undefined}\;\;
-P\;\textsf{omits}\;v\;\;
+v\;\textsf{is}\;\textsf{omitted}\;\textsf{from}\;P\;\;
 }
 {
 P
@@ -57,7 +57,7 @@ v\;\textsf{is}\;\textsf{defined}\;\;
 \;\;
 u\;\textsf{is}\;\textsf{undefined}\;\;
 u\;\textsf{is}\;\textsf{free}\;\textsf{in}\;P\;\;
-Q\;\textsf{omits}\;v\;\;
+v\;\textsf{is}\;\textsf{omitted}\;\textsf{from}\;Q\;\;
 P[v\;\textsf{for}\;u] \Rightarrow{Q}
 }
 {
