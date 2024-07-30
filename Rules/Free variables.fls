@@ -5,7 +5,7 @@ Metavariable Q:Statement
 
 Rule (FreeVariable)
   Premise
-    x is contained in P
+    u is contained in P
   Conclusion
     u is free in P
 
