@@ -10,7 +10,7 @@ Rule (UniversalIntroduction,UniversalGeneralisation)
     u is undefined
     u is free in P
     v is undefined 
-    P omits v
+    v is omitted from P
   Conclusion
     ∀v P[v for u]
 
@@ -20,6 +20,6 @@ Rule (UniversalElimination,UniversalInstantiation)
     u is undefined
     u is free in P
     v is undefined 
-    P omits v
+    v is omitted from P
   Conclusion
     P
