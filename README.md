@@ -45,7 +45,7 @@ u\;\textsf{is}\;\textsf{free}\;\textsf{in}\;P\;\;
 v\;\textsf{is}\;\textsf{defined}\;\;
 }
 {
-\exists v\; P[v\;\textsf{for}\;u]
+\exists v\; P
 }
 \quad\small\text{[ExistentialIntroduction,ExistentialGeneralisation]}
 \]
