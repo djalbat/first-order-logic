@@ -11,7 +11,7 @@ Rule (ExistentialIntroduction,ExistentialGeneralisation)
     u is free in P
     v is defined
   Conclusion
-    ∃v P
+    ∃u P
 
 Rule (ExistentialElimination,ExistentialInstantiation)
   Premises
