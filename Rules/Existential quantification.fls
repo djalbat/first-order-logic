@@ -19,7 +19,8 @@ Rule (ExistentialElimination,ExistentialInstantiation)
     ∃v P[v for u]
     u is undefined 
     u is free in P
-    v is omitted from Q
+    v is undefined 
+    v is omitted from P
     P[v for u] ⇒ Q
   Conclusion
     Q
