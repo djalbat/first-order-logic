@@ -53,7 +53,7 @@ v\;\textsf{is}\;\textsf{defined}\;\;
 \[
 \frac
 {
-\exists v\; P[v\;\textsf{for}\;u]
+\exists u\; P
 \;\;
 u\;\textsf{is}\;\textsf{undefined}\;\;
 u\;\textsf{is}\;\textsf{free}\;\textsf{in}\;P\;\;

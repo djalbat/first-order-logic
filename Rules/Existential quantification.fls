@@ -16,10 +16,9 @@ Rule (ExistentialIntroduction,ExistentialGeneralisation)
 
 Rule (ExistentialElimination,ExistentialInstantiation)
   Premises
-    ∃v P[v for u]
+    ∃u P
     u is undefined 
     u is free in P
-    v is undefined 
     v is omitted from P
     P[v for u] ⇒ Q
   Conclusion
