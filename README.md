@@ -18,7 +18,9 @@ v\;\textsf{is}\;\textsf{omitted}\;\textsf{from}\;P\;\;
 }
 \quad\small\text{[UniversalIntroduction,UniversalGeneralisation]}
 \]
+
 &nbsp;
+
 \[
 \frac
 {
@@ -34,7 +36,9 @@ P
 }
 \quad\small\text{[UniversalElimination,UniversalInstantiation]}
 \]
+
 &nbsp;
+
 \[
 \frac
 {
@@ -49,7 +53,9 @@ v\;\textsf{is}\;\textsf{defined}\;\;
 }
 \quad\small\text{[ExistentialIntroduction,ExistentialGeneralisation]}
 \]
+
 &nbsp;
+
 \[
 \frac
 {
@@ -65,6 +71,36 @@ Q
 }
 \quad\small\text{[ExistentialElimination,ExistentialInstantiation]}
 \]
+
+The concepts of free and bound variables are also defined, up to a point.
+They are defined recusively over the structure of statements in relation to the standard propoisitional logic connectives, including the material conditional.
+
+However, there is no way to corredtly define either free or bound variables at a root level, so to speak.
+For bound variables the rule is adequate:
+
+```
+Rule (BoundVariable)
+  Premise
+    u is free in P
+  Conclusion
+    u is bound in ∀u P
+```
+
+However, for free variables the rule is certainly not adepquate:
+
+```
+Rule (FreeVariable)
+  Premise
+    u is contained in P
+  Conclusion
+    u is free in P
+```
+
+The philosophy behind the inclusion of this rule is that it is marginally better than nothing, 
+but clearly the variable `u` being simply contained in the statement `P` is not enough to guarantee that it is free.
+
+To really assert that a variable is free or bound in an arbitrary statement would require some kind of embedded query language that would allow the user to traverse the parse tree.
+Precisely what that language would look like has yet to be decided but there seems no alternative.
 
 ## Contact
 
