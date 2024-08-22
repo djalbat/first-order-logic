@@ -1,0 +1,61 @@
+Variable l
+Variable m
+Variable n
+
+Variable r
+Variable s
+
+Lemma
+  Suppose
+    ∃m m = l
+    n = l ⇒ r = s
+  Then
+    r = s
+  Proof
+    m is contained in m = l
+    m is undefined 
+    m is free in m = l by FreeVariable
+    n is omitted from m = l
+  Therefore
+    r = s by ExistentialElimination
+
+Lemma
+  Suppose
+    n = l
+  Then
+    ∃m m = l
+  Proof
+    m is contained in m = l
+    m is undefined 
+    m is free in m = l by FreeVariable
+    n is omitted from m = l
+  Therefore
+    ∃m m = l by ExistentialIntroduction
+
+Lemma
+  Suppose
+    n = n
+  Then
+    ∀m m = m
+  Proof
+    n is contained in n = n
+    n is undefined
+    n is free in n = n by FreeVariable
+    m is undefined 
+    m is omitted from n = n
+  Therefore
+    ∀m m = m by UniversalIntroduction
+
+Lemma
+  Suppose
+    ∀m m = m
+  Then
+    n = n
+  Proof
+    n is contained in n = n
+    n is undefined
+    n is free in n = n by FreeVariable
+    m is undefined 
+    m is omitted from n = n
+  Therefore
+    n = n by UniversalElimination
