@@ -72,7 +72,9 @@ Q
 \quad\small\text{[ExistentialElimination,ExistentialInstantiation]}
 \]
 
-The concepts of free and bound variables are also defined, up to a point.
+There are also four lemmas to test each of the above rules.
+
+Nota the concepts of free and bound variables are also defined, up to a point.
 They are defined recusively over the structure of statements in relation to the standard propoisitional logic connectives, including the material conditional.
 
 However, there is no way to corredtly define either free or bound variables at a root level, so to speak.
