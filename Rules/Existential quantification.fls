@@ -9,7 +9,6 @@ Rule (ExistentialIntroduction,ExistentialGeneralisation)
     P[v for u]
     u is undefined 
     u is free in P
-    v is defined
     v is omitted from P
   Conclusion
     ∃u P
