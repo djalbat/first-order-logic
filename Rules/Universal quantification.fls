@@ -7,19 +7,19 @@ Metavariable Q:Statement
 Rule (UniversalIntroduction,UniversalGeneralisation)
   Premises
     P
-    u is undefined
+    u is not defined
     u is free in P
-    v is undefined 
-    v is omitted from P
+    v is not defined 
+    v is not contained in P
   Conclusion
     ∀v P[v for u]
 
 Rule (UniversalElimination,UniversalInstantiation)
   Premises
     ∀v P[v for u]
-    u is undefined
+    u is not defined
     u is free in P
-    v is undefined 
-    v is omitted from P
+    v is not defined 
+    v is not contained in P
   Conclusion
     P

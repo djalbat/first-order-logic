@@ -13,9 +13,9 @@ Lemma
     r = s
   Proof
     m is contained in m = l
-    m is undefined 
+    m is not defined 
     m is free in m = l by FreeVariable
-    n is omitted from m = l
+    n is not contained in m = l
   Therefore
     r = s by ExistentialElimination
 
@@ -26,9 +26,9 @@ Lemma
     ∃m m = l
   Proof
     m is contained in m = l
-    m is undefined 
+    m is not defined 
     m is free in m = l by FreeVariable
-    n is omitted from m = l
+    n is not contained in m = l
   Therefore
     ∃m m = l by ExistentialIntroduction
 
@@ -39,10 +39,10 @@ Lemma
     ∀m m = m
   Proof
     n is contained in n = n
-    n is undefined
+    n is not defined
     n is free in n = n by FreeVariable
-    m is undefined 
-    m is omitted from n = n
+    m is not defined 
+    m is not contained in n = n
   Therefore
     ∀m m = m by UniversalIntroduction
 
@@ -53,9 +53,9 @@ Lemma
     n = n
   Proof
     n is contained in n = n
-    n is undefined
+    n is not defined
     n is free in n = n by FreeVariable
-    m is undefined 
-    m is omitted from n = n
+    m is not defined 
+    m is not contained in n = n
   Therefore
     n = n by UniversalElimination

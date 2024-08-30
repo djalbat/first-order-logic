@@ -7,18 +7,18 @@ Metavariable Q:Statement
 Rule (ExistentialIntroduction,ExistentialGeneralisation)
   Premises
     P[v for u]
-    u is undefined 
+    u is not defined 
     u is free in P
-    v is omitted from P
+    v is not contained in P
   Conclusion
     ∃u P
 
 Rule (ExistentialElimination,ExistentialInstantiation)
   Premises
     ∃u P
-    u is undefined 
+    u is not defined 
     u is free in P
-    v is omitted from P
+    v is not contained in P
     P[v for u] ⇒ Q
   Conclusion
     Q
