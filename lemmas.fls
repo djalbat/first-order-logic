@@ -1,0 +1,61 @@
+Variable l
+Variable m
+Variable n
+
+Variable r
+Variable s
+
+Lemma
+  Suppose
+    m = l
+  Then
+    ∃n n = l
+  Proof
+    n is contained in n = l
+    n is not defined 
+    n is free in n = l by FreeVariable
+    m is not contained in n = l
+  Therefore
+    ∃n n = l by ExistentialIntroduction
+
+Lemma
+  Suppose
+    ∃n n = l
+    m = l ⇒ r = s
+  Then
+    r = s
+  Proof
+    n is contained in n = l
+    n is not defined 
+    n is free in n = l by FreeVariable
+    m is not contained in n = l
+  Therefore
+    r = s by ExistentialElimination
+
+Lemma
+  Suppose
+    ∀n n = n
+  Then
+    m = m
+  Proof
+    m is contained in m = m
+    m is not defined
+    m is free in m = m by FreeVariable
+    n is not defined 
+    n is not contained in m = m
+  Therefore
+    m = m by UniversalElimination
+
+Lemma
+  Suppose
+    m = m
+  Then
+    ∀n n = n
+  Proof
+    m is contained in m = m
+    m is not defined
+    m is free in m = m by FreeVariable
+    n is not defined 
+    n is not contained in m = m
+  Therefore
+    ∀n n = n by UniversalIntroduction
