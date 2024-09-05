@@ -1,8 +1,0 @@
-
-
-                          metastatement  ::=  ( "∀" | "∃" )<NO_WHITESPACE>argument metastatement 
-
-                                           |  argument "is" ( "bound" | "free" ) "in" metastatement
-
-                                           ;
-
