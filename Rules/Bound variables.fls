@@ -1,5 +1,8 @@
 Variable u
 
+Metavariable U:Frame
+Metavariable V:Frame
+
 Metavariable P:Statement
 Metavariable Q:Statement
 
@@ -9,50 +12,8 @@ Rule (BoundVariable)
   Conclusion
     u is bound in ∀u P
 
-Rule (BoundNegation)
+Rule (BounMetaVariable)
   Premise
-    u is bound in P
+    [U] is free in P
   Conclusion
-    u is bound in ¬P
-
-Rule (BoundConjunction)
-  Premise
-    u is bound in P
-  Conclusion
-    u is bound in (P ∧ Q)
-
-Rule (BoundDisjunction)
-  Premise
-    u is bound in P
-  Conclusion
-    u is bound in (P ∨ Q)
-
-Rule (BoundBiconditinoal)
-  Premise
-    u is bound in P
-  Conclusion
-    u is bound in (P iff Q)
-    
-Rule (BoundLeftImplication)
-  Premise
-    u is bound in P
-  Conclusion
-    u is bound in (P ⇒ Q)
-    
-Rule (BoundRightImplication)
-  Premise
-    u is bound in Q
-  Conclusion
-    u is bound in (P ⇒ Q)
-    
-Rule (BoundLeftMaterialConditional)
-  Premise
-    u is bound in P
-  Conclusion
-    u is bound in (P → Q)
-    
-Rule (BoundRightMaterialConditional)
-  Premise
-    u is bound in Q
-  Conclusion
-    u is bound in (P → Q)
+    [U] is bound in ∀[U] P

@@ -1,6 +1,9 @@
 Variable u
 Variable v
 
+Metavariable U:Frame
+Metavariable V:Frame
+
 Metavariable P:Statement
 Metavariable Q:Statement
 
@@ -20,5 +23,24 @@ Rule (ExistentialElimination,ExistentialInstantiation)
     u is free in P
     v is not contained in P
     P[v for u] ⇒ Q
+  Conclusion
+    Q
+
+Rule (MetaExistentialIntroduction)
+  Premises
+    P[[V] for [U]]
+    [U] is not defined 
+    [U] is free in P
+    [V] is not contained in P
+  Conclusion
+    ∃[U] P
+
+Rule (MetaExistentialElimination)
+  Premises
+    ∃[U] P
+    [U] is not defined 
+    [U] is free in P
+    [V] is not contained in P
+    P[[V] for [U]] ⇒ Q
   Conclusion
     Q

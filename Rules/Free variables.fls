@@ -1,5 +1,8 @@
 Variable u
 
+Metavariable U:Frame
+Metavariable V:Frame
+
 Metavariable P:Statement
 Metavariable Q:Statement
 
@@ -9,42 +12,8 @@ Rule (FreeVariable)
   Conclusion
     u is free in P
 
-Rule (FreeNegation)
+Rule (FreeMetavariable)
   Premise
-    u is free in P
+    [U] is contained in P
   Conclusion
-    u is free in ¬P
-
-Rule (FreeConjunction)
-  Premises
-    u is free in P
-    u is free in Q
-  Conclusion
-    u is free in (P ∧ Q)
-
-Rule (FreeDisjunction)
-  Premise
-    u is free in P
-  Conclusion
-    u is free in (P ∨ Q)
-
-Rule (FreeBiconditinoal)
-  Premises
-    u is free in P
-    u is free in Q
-  Conclusion
-    u is free in (P iff Q)
-    
-Rule (FreeImplication)
-  Premises
-    u is free in P
-    u is free in Q
-  Conclusion
-    u is free in (P ⇒ Q)
-    
-Rule (FreeMaterialConditional)
-  Premises
-    u is free in P
-    u is free in Q
-  Conclusion
-    u is free in (P → Q)
+    [U] is free in P

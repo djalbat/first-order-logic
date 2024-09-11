@@ -1,6 +1,9 @@
 Variable u
 Variable v
 
+Metavariable U:Frame
+Metavariable V:Frame
+
 Metavariable P:Statement
 Metavariable Q:Statement
 
@@ -21,5 +24,25 @@ Rule (UniversalElimination,UniversalInstantiation)
     u is free in P
     v is not defined 
     v is not contained in P
+  Conclusion
+    P
+
+Rule (MetaUniversalIntroduction)
+  Premises
+    P
+    [U] is not defined
+    [U] is free in P
+    [V] is not defined 
+    [V] is not contained in P
+  Conclusion
+    ∀ [V] P[[V] for [U]]
+
+Rule (MetaUniversalElimination)
+  Premises
+    ∀ [V] P[[V] for [U]]
+    [U] is not defined
+    [U] is free in P
+    [V] is not defined 
+    [V] is not contained in P
   Conclusion
     P
