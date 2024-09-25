@@ -19,7 +19,7 @@ Rule (ExistentialIntroduction,ExistentialGeneralisation)
 Rule (ExistentialElimination,ExistentialInstantiation)
   Premises
     ∃u P
-    P[v for u] ⇒ Q
+    [P[v for u]] ... Q
     u is not defined 
     u is free in P
     v is not contained in P
@@ -38,7 +38,7 @@ Rule (MetaExistentialIntroduction)
 Rule (MetaExistentialElimination)
   Premises
     ∃[U] P
-    P[[V] for [U]] ⇒ Q
+    [P[[V] for [U]]] ... Q
     [U] is not defined 
     [U] is free in P
     [V] is not contained in P
