@@ -1,8 +1,8 @@
 
 
-                              statement  ::=  ( "∀" | "∃" ) ( ( "[" metaArgument "]" ) | argument ) metaArgument 
+                              statement  ::=  ( "∀" | "∃" ) ( ( "[" frameArgument "]" ) | argument ) metaArgument 
 
-                                           |  ( ( "[" metaArgument "]" ) | argument ) "is" ( "bound" | "free" ) "in" metaArgument
+                                           |  ( ( "[" frameArgument "]" ) | argument ) "is" ( "bound" | "free" ) "in" metaArgument
 
                                            ;
 
