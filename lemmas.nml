@@ -12,21 +12,6 @@ Metavariable S:Statement
 
 Lemma
   Suppose
-    m = m
-  Then
-    ∀n n = n
-  Proof
-    m is contained in m = m
-    m = m
-    m is not defined
-    m is free in m = m by FreeVariable
-    n is not defined 
-    n is not contained in m = m
-  Therefore
-    ∀n n = n by UniversalIntroduction
-
-Lemma
-  Suppose
     ∀n n = n
   Then
     m = m
