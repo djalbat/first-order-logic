@@ -1,0 +1,101 @@
+Variable l
+Variable m
+Variable n
+
+Variable r
+Variable s
+
+Metavariable ρ:Frame
+Metavariable τ:Frame
+Metavariable R:Reference
+Metavariable S:Statement
+
+Lemma
+  Suppose
+    m = m
+  Then
+    ∀n n = n
+  Proof
+    m is contained in m = m
+    m = m
+    m is not defined
+    m is free in m = m by FreeVariable
+    n is not defined 
+    n is not contained in m = m
+  Therefore
+    ∀n n = n by UniversalIntroduction
+
+Lemma
+  Suppose
+    ∀n n = n
+  Then
+    m = m
+  Proof
+    m is contained in m = m
+    ∀n n = n
+    m is not defined
+    m is free in m = m by FreeVariable
+    n is not defined 
+    n is not contained in m = m
+  Therefore
+    m = m by UniversalElimination
+
+Lemma
+  Suppose
+    m = l
+  Then
+    ∃n n = l
+  Proof
+    n is contained in n = l
+    m = l
+    n is not defined 
+    n is free in n = l by FreeVariable
+    m is not contained in n = l
+  Therefore
+    ∃n n = l by ExistentialIntroduction
+
+Lemma
+  Suppose
+    ∃n n = l
+    [m = l] ... r = s
+  Then
+    r = s
+  Proof
+    n is contained in n = l
+    ∃n n = l
+    [m = l] ... r = s
+    n is not defined 
+    n is free in n = l by FreeVariable
+    m is not contained in n = l
+  Therefore
+    r = s by ExistentialElimination
+
+Lemma
+  Suppose
+    ρ |= R :: S
+  Then
+    ∃[τ] (τ |= R :: S)
+  Proof
+    [τ] is contained in (τ |= R :: S)
+    ρ |= R :: S
+    [τ] is not defined 
+    [τ] is free in (τ |= R :: S) by FreeMetavariable
+    [ρ] is not contained in (τ |= R :: S)
+  Therefore
+    ∃[τ] (τ |= R :: S) by MetaExistentialIntroduction
+
+Lemma
+  Suppose
+    ∃[τ] (τ |= R :: S)
+    [ρ |= R :: S] ... r = s
+  Then
+    r = s
+  Proof
+    [τ] is contained in (τ |= R :: S)
+    ∃[τ] (τ |= R :: S)
+    [ρ |= R :: S] ... r = s
+    [τ] is not defined 
+    [τ] is free in (τ |= R :: S) by FreeMetavariable
+    [ρ] is not contained in (τ |= R :: S)
+  Therefore
+    r = s by MetaExistentialElimination
