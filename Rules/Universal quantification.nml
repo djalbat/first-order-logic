@@ -9,40 +9,40 @@ Metavariable Q:Statement
 
 Rule (UniversalIntroduction,UniversalGeneralisation)
   Premises
-    P
-    u is not defined
     u is free in P
+    u is not defined
     v is not defined 
     v is not contained in P
+    P
   Conclusion
     ∀v P[v for u]
 
 Rule (UniversalElimination,UniversalInstantiation)
   Premises
-    ∀v P[v for u]
-    u is not defined
     u is free in P
+    u is not defined
     v is not defined 
     v is not contained in P
+    ∀v P[v for u]
   Conclusion
     P
 
 Rule (MetaUniversalIntroduction)
   Premises
-    P
-    [U] is not defined
     [U] is free in P
+    [U] is not defined
     [V] is not defined 
     [V] is not contained in P
+    P
   Conclusion
     ∀ [V] P[[V] for [U]]
 
 Rule (MetaUniversalElimination)
   Premises
-    ∀ [V] P[[V] for [U]]
-    [U] is not defined
     [U] is free in P
+    [U] is not defined
     [V] is not defined 
     [V] is not contained in P
+    ∀ [V] P[[V] for [U]]
   Conclusion
     P
