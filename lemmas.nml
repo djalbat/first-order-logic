@@ -53,21 +53,21 @@ Lemma
 
 Lemma
   Suppose
-    [ρ] |= R :: S
+    [ρ] |- R :: S
   Then
-    ∃[τ] [τ] |= R :: S
+    ∃[τ] [τ] |- R :: S
   Proof
-    [τ] is free in [τ] |= R :: S by FreeMetavariable
+    [τ] is free in [τ] |- R :: S by FreeMetavariable
   Therefore
-    ∃[τ] [τ] |= R :: S by MetaExistentialIntroduction
+    ∃[τ] [τ] |- R :: S by MetaExistentialIntroduction
 
 Lemma
   Suppose
-    ∃[τ] [τ] |= R :: S
-    [[ρ] |= R :: S] ... r = s
+    ∃[τ] [τ] |- R :: S
+    [[ρ] |- R :: S] ... r = s
   Then
     r = s
   Proof
-    [τ] is free in [τ] |= R :: S by FreeMetavariable
+    [τ] is free in [τ] |- R :: S by FreeMetavariable
   Therefore
     r = s by MetaExistentialElimination
