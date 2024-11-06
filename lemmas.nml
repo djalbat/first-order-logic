@@ -1,0 +1,73 @@
+Variable l
+Variable m
+Variable n
+
+Variable r
+Variable s
+
+Metavariable ρ:Frame
+Metavariable τ:Frame
+Metavariable R:Reference
+Metavariable S:Statement
+
+Lemma
+  Suppose
+    m = m
+  Then
+    ∀n n = n
+  Proof
+    m is free in m = m by FreeVariable
+  Therefore
+    ∀n n = n by UniversalIntroduction
+
+Lemma
+  Suppose
+    ∀n n = n
+  Then
+    m = m
+  Proof
+    m is free in m = m by FreeVariable
+  Therefore
+    m = m by UniversalElimination
+
+Lemma
+  Suppose
+    m = l
+  Then
+    ∃n n = l
+  Proof
+    n is free in n = l by FreeVariable
+  Therefore
+    ∃n n = l by ExistentialIntroduction
+
+Lemma
+  Suppose
+    ∃n n = l
+    [m = l] ... r = s
+  Then
+    r = s
+  Proof
+    n is free in n = l by FreeVariable
+  Therefore
+    r = s by ExistentialElimination
+
+Lemma
+  Suppose
+    [ρ] |- R :: S
+  Then
+    ∃[τ] [τ] |- R :: S
+  Proof
+    [τ] is free in [τ] |- R :: S by FreeMetavariable
+  Therefore
+    ∃[τ] [τ] |- R :: S by MetaExistentialIntroduction
+
+Lemma
+  Suppose
+    ∃[τ] [τ] |- R :: S
+    [[ρ] |- R :: S] ... r = s
+  Then
+    r = s
+  Proof
+    [τ] is free in [τ] |- R :: S by FreeMetavariable
+  Therefore
+    r = s by MetaExistentialElimination
