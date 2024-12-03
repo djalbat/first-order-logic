@@ -16,7 +16,7 @@ Lemma
   Then
     ∀n n = n
   Proof
-    m is free in m = m by FreeVariable
+    m free in m = m by FreeVariable
   Therefore
     ∀n n = n by UniversalIntroduction
 
@@ -26,7 +26,7 @@ Lemma
   Then
     m = m
   Proof
-    m is free in m = m by FreeVariable
+    m free in m = m by FreeVariable
   Therefore
     m = m by UniversalElimination
 
@@ -36,7 +36,7 @@ Lemma
   Then
     ∃n n = l
   Proof
-    n is free in n = l by FreeVariable
+    n free in n = l by FreeVariable
   Therefore
     ∃n n = l by ExistentialIntroduction
 
@@ -47,7 +47,7 @@ Lemma
   Then
     r = s
   Proof
-    n is free in n = l by FreeVariable
+    n free in n = l by FreeVariable
   Therefore
     r = s by ExistentialElimination
 
@@ -57,7 +57,7 @@ Lemma
   Then
     ∃[τ] [τ] |- R :: S
   Proof
-    [τ] is free in [τ] |- R :: S by FreeMetavariable
+    [τ] free in [τ] |- R :: S by FreeMetavariable
   Therefore
     ∃[τ] [τ] |- R :: S by MetaExistentialIntroduction
 
@@ -68,6 +68,6 @@ Lemma
   Then
     r = s
   Proof
-    [τ] is free in [τ] |- R :: S by FreeMetavariable
+    [τ] free in [τ] |- R :: S by FreeMetavariable
   Therefore
     r = s by MetaExistentialElimination

@@ -8,12 +8,12 @@ Metavariable Q:Statement
 
 Rule (FreeVariable)
   Premise
-    u is contained in P
+    u contained in P
   Conclusion
-    u is free in P
+    u free in P
 
 Rule (FreeMetavariable)
   Premise
-    [U] is contained in P
+    [U] contained in P
   Conclusion
-    [U] is free in P
+    [U] free in P
