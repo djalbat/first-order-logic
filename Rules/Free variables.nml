@@ -8,7 +8,7 @@ Metavariable Q:Statement
 
 Rule (FreeVariable)
   Premise
-    u contained in P
+    @isVariableFree(u, P)
   Conclusion
     u free in P
 
