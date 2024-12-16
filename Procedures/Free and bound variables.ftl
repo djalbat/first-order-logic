@@ -15,14 +15,16 @@ Boolean isVariableBound(Node termNode, Node statementNode) {
     
   String variableName = variableNameFromTermNode(termNode);
   
-  If (variableName != null) {
+  If (variableName != "") {
     Nodes statementNodes = nodesQuery(statementNode, //statement);
 
     ForEach(statementNodes, (Node statementNode) {
-      String boundVariableName = boundVariableNameFromStatementNode(statementNode); 
+      If (!variableBound) {
+        String boundVariableName = boundVariableNameFromStatementNode(statementNode); 
       
-      If (boundVariableName == variableName) {
-        variableBound = true;
+        If (boundVariableName == variableName) {
+          variableBound = true;
+        }
       }
     });
   }
@@ -31,12 +33,12 @@ Boolean isVariableBound(Node termNode, Node statementNode) {
 }
   
 String variableNameFromTermNode(Node termNode) {
-  String variableName = null;
+  String variableName = "";
   
   Node variableNameTerminalNode = nodeQuery(termNode, /term/variable/@name);
   
   If (variableNameTerminalNode != null) {
-    ( String content ) = variableNameTerminalNode;
+    { String content } = variableNameTerminalNode;
     
     variableName = content;
   }
@@ -45,23 +47,27 @@ String variableNameFromTermNode(Node termNode) {
 }
 
 String boundVariableNameFromStatementNode(Node statementNode) {
-  String boundVariableName = null;
+  String boundVariableName = "";
   
-  ( Nodes childNodes ) = statementNode;
+  { Nodes childNodes } = statementNode;
   
   [ Node firstChildNode ] = childNodes;
+
+  { Boolean terminal } = firstChildNode;
+
+  If (terminal) {
+    { String content } = firstChildNode;
   
-  ( String content ) = firstChildNode;
-  
-  If ((content == "∀") || (content == "∃")) {
-    [ _, Node argumentNode ] = childNodes;
-    
-    Node boundVariableNameTerminalNode = nodeQuery(argumentNode, /argument/term/variable/@name);
-    
-    If (boundVariableNameTerminalNode != null) {
-      ( String content ) = boundVariableNameTerminalNode;
+    If ((content == "∀") || (content == "∃")) {
+      [ _, Node argumentNode ] = childNodes;
       
-      boundVariableName = content;
+      Node boundVariableNameTerminalNode = nodeQuery(argumentNode, /argument/term/variable/@name);
+    
+      If (boundVariableNameTerminalNode != null) {
+        { String content } = boundVariableNameTerminalNode;
+      
+        boundVariableName = content;
+      }
     }
   }
     

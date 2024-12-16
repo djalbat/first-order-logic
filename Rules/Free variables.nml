@@ -10,10 +10,10 @@ Rule (FreeVariable)
   Premise
     @isVariableFree(u, P)
   Conclusion
-    u free in P
+    u is free in P
 
 Rule (FreeMetavariable)
   Premise
-    [U] contained in P
+    [U] is contained in P
   Conclusion
-    [U] free in P
+    [U] is free in P

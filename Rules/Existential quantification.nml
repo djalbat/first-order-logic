@@ -9,38 +9,38 @@ Metavariable Q:Statement
 
 Rule (ExistentialIntroduction,ExistentialGeneralisation)
   Premises
-    u not defined 
-    v not contained in P
+    u is not defined 
+    v is not contained in P
     P[v for u]
-    u free in P
+    u is free in P
   Conclusion
     ∃u P
 
 Rule (ExistentialElimination,ExistentialInstantiation)
   Premises
-    u not defined 
-    v not contained in P
+    u is not defined 
+    v is not contained in P
     ∃u P
     [P[v for u]] ... Q
-    u free in P
+    u is free in P
   Conclusion
     Q
 
 Rule (MetaExistentialIntroduction)
   Premises
-    [U] not defined 
-    [V] not contained in P
+    [U] is not defined 
+    [V] is not contained in P
     P[[V] for [U]]
-    [U] free in P
+    [U] is free in P
   Conclusion
     ∃[U] P
 
 Rule (MetaExistentialElimination)
   Premises
-    [U] not defined 
-    [V] not contained in P
+    [U] is not defined 
+    [V] is not contained in P
     ∃[U] P
     [P[[V] for [U]]] ... Q
-    [U] free in P
+    [U] is free in P
   Conclusion
     Q
