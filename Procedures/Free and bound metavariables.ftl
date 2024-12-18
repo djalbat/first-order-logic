@@ -53,9 +53,9 @@ String boundMetavariableNameFromStatementNode(Node statementNode) {
   
   [ Node firstChildNode ] = childNodes;
 
-  { Boolean frameinal } = firstChildNode;
+  { Boolean terminal } = firstChildNode;
 
-  If (frameinal) {
+  If (terminal) {
     { String content } = firstChildNode;
   
     If ((content == "∀") || (content == "∃")) {
