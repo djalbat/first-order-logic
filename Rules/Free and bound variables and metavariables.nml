@@ -12,8 +12,20 @@ Rule (FreeVariable)
   Conclusion
     u is free in P
 
+Rule (BoundVariable)
+  Premise
+    @isVariableBound(u, P)
+  Conclusion
+    u is bound in P
+
 Rule (FreeMetavariable)
   Premise
-    [U] is contained in P
+    @isMetavariableFree(U, P)
   Conclusion
     [U] is free in P
+
+Rule (BoundMetavariable)
+  Premise
+    @isMetavariableBound(U, P)
+  Conclusion
+    [U] is bound in P

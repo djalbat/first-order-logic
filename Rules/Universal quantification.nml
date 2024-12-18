@@ -9,9 +9,9 @@ Metavariable Q:Statement
 
 Rule (UniversalIntroduction,UniversalGeneralisation)
   Premises
-    u is not defined
-    v is not defined 
-    v is not contained in P
+    u is undefined
+    v is undefined 
+    v is missing in P
     P
     u is free in P
   Conclusion
@@ -19,9 +19,9 @@ Rule (UniversalIntroduction,UniversalGeneralisation)
 
 Rule (UniversalElimination,UniversalInstantiation)
   Premises
-    u is not defined
-    v is not defined 
-    v is not contained in P
+    u is undefined
+    v is undefined 
+    v is missing in P
     ∀v P[v for u]
     u is free in P
   Conclusion
@@ -29,9 +29,9 @@ Rule (UniversalElimination,UniversalInstantiation)
 
 Rule (MetaUniversalIntroduction)
   Premises
-    [U] is not defined
-    [V] is not defined 
-    [V] is not contained in P
+    [U] is undefined
+    [V] is undefined 
+    [V] is missing in P
     P
     [U] is free in P
   Conclusion
@@ -39,9 +39,9 @@ Rule (MetaUniversalIntroduction)
 
 Rule (MetaUniversalElimination)
   Premises
-    [U] is not defined
-    [V] is not defined 
-    [V] is not contained in P
+    [U] is undefined
+    [V] is undefined 
+    [V] is missing in P
     ∀ [V] P[[V] for [U]]
     [U] is free in P
   Conclusion
