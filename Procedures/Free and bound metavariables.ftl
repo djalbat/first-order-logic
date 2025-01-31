@@ -5,7 +5,7 @@ Boolean isMetavariableFree(Node frameNode, Node statementNode) {
 
   If (metavariableBound) {
     metavariableFree = false;
-  }
+  } 
 
   Return metavariableFree;
 }
