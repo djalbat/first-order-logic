@@ -1,75 +1,112 @@
 Boolean isMetavariableFree(Node frameNode, Node statementNode) {
-  Boolean metavariableFree = true;
-
   Boolean metavariableBound = isMetavariableBound(frameNode, statementNode);
 
-  If (metavariableBound) {
-    metavariableFree = false;
-  } 
+  Boolean metavariableFree = !metavariableBound;
 
   Return metavariableFree;
 }
 
 Boolean isMetavariableBound(Node frameNode, Node statementNode) {
-  Boolean metavariableBound = false;
-    
-  String metavariableName = metavariableNameFromFrameNode(frameNode);
-  
-  If (metavariableName != "") {
-    Nodes statementNodes = nodesQuery(statementNode, //statement);
+  String metavariableName = metavariableNameFromTermNode(frameNode);
 
-    ForEach(statementNodes, (Node statementNode) {
-      If (!metavariableBound) {
-        String boundMetavariableName = boundMetavariableNameFromStatementNode(statementNode); 
-      
-        If (boundMetavariableName == metavariableName) {
-          metavariableBound = true;
-        }
-      }
-    });
-  }
+  Boolean metavariableBound = 
+
+    If (metavariableName != "")
+      metavariableBoundFromMetavariableNameAndStatementNode(metavariableName, statementNode)
+
+    Else
+      false
+  ;
   
   Return metavariableBound;
 }
-  
-String metavariableNameFromFrameNode(Node frameNode) {
-  String metavariableName = "";
-  
+
+String metavariableNameFromTermNode(Node frameNode) {
   Node metavariableNameTerminalNode = nodeQuery(frameNode, /frame/metavariable/@name);
   
-  If (metavariableNameTerminalNode != null) {
-    { String content } = metavariableNameTerminalNode;
+  String metavariableName = 
+
+    If (metavariableNameTerminalNode != null) {
+      { String content As metavariableName } = metavariableNameTerminalNode;
     
-    metavariableName = content;
-  }
+      Return metavariableName;
+    } 
+
+    Else 
+      ""
+  ;
   
   Return metavariableName;
 }
 
 String boundMetavariableNameFromStatementNode(Node statementNode) {
-  String boundMetavariableName = "";
-  
-  { Nodes childNodes } = statementNode;
-  
-  [ Node firstChildNode ] = childNodes;
+  { Nodes childNodes As statementChildNodes } = statementNode;
 
-  { Boolean terminal } = firstChildNode;
+  [ Node firstStatementChildNode ] = statementChildNodes;
 
-  If (terminal) {
-    { String content } = firstChildNode;
-  
-    If ((content == "∀") || (content == "∃")) {
-      [ _, Node argumentNode ] = childNodes;
-      
-      Node boundMetavariableNameTerminalNode = nodeQuery(argumentNode, /argument/frame/metavariable/@name);
-    
-      If (boundMetavariableNameTerminalNode != null) {
-        { String content } = boundMetavariableNameTerminalNode;
-      
-        boundMetavariableName = content;
-      }
-    }
-  }
+  { Boolean terminal } = firstStatementChildNode;
+
+  String boundMetavariableName = 
+
+    If (terminal) 
+      boundMetavariableNameFromStatementChildNodes(statementChildNodes)
+
+    Else 
+      ""
+  ;
     
   Return boundMetavariableName;
+}
+
+String boundMetavariableNameFromStatementChildNodes(Nodes statementChildNodes) {
+  [ Node terminalNode ] = statementChildNodes;
+
+  { String content } = terminalNode;
+
+  String boundMetavariableName = 
+
+    If ((content == "∀") || (content == "∃")) {
+      [ _, Node argumentNode ] = statementChildNodes;
+
+      String boundMetavariableName = boundMetavariableNameFromArgumentNode(argumentNode);
+  
+      Return boundMetavariableName;
+    }
+    Else
+     ""
+  ;
+
+  Return boundMetavariableName;
+}
+
+String boundMetavariableNameFromArgumentNode(Node argumentNode) {
+  Node boundMetavariableNameTerminalNode = nodeQuery(argumentNode, /argument/frame/metavariable/@name);
+
+  String boundMetavariableName = 
+
+    If (boundMetavariableNameTerminalNode != null) {
+      { String content As boundMetavariableName } = boundMetavariableNameTerminalNode;
+      
+      Return boundMetavariableName;
+    }
+
+    Else
+      ""
+  ;
+    
+  Return boundMetavariableName;
+}
+
+Boolean metavariableBoundFromMetavariableNameAndStatementNode(String metavariableName, Node statementNode) {
+  Nodes statementNodes = nodesQuery(statementNode, //statement);
+
+  Boolean metavariableBound = Some(statementNodes, Boolean (Node statementNode) {
+    String boundMetavariableName = boundMetavariableNameFromStatementNode(statementNode); 
+
+    Boolean metavariableBound = (boundMetavariableName == metavariableName);
+
+    Return metavariableBound;
+  });
+
+  Return metavariableBound;
 }

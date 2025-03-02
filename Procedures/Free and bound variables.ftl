@@ -1,75 +1,112 @@
 Boolean isVariableFree(Node termNode, Node statementNode) {
-  Boolean variableFree = true;
-
   Boolean variableBound = isVariableBound(termNode, statementNode);
 
-  If (variableBound) {
-    variableFree = false;
-  }
+  Boolean variableFree = !variableBound;
 
   Return variableFree;
 }
 
 Boolean isVariableBound(Node termNode, Node statementNode) {
-  Boolean variableBound = false;
-    
   String variableName = variableNameFromTermNode(termNode);
-  
-  If (variableName != "") {
-    Nodes statementNodes = nodesQuery(statementNode, //statement);
 
-    ForEach(statementNodes, (Node statementNode) {
-      If (!variableBound) {
-        String boundVariableName = boundVariableNameFromStatementNode(statementNode); 
-      
-        If (boundVariableName == variableName) {
-          variableBound = true;
-        }
-      }
-    });
-  }
+  Boolean variableBound = 
+
+    If (variableName != "")
+      variableBoundFromVariableNameAndStatementNode(variableName, statementNode)
+
+    Else
+      false
+  ;
   
   Return variableBound;
 }
-  
+
 String variableNameFromTermNode(Node termNode) {
-  String variableName = "";
-  
   Node variableNameTerminalNode = nodeQuery(termNode, /term/variable/@name);
   
-  If (variableNameTerminalNode != null) {
-    { String content } = variableNameTerminalNode;
+  String variableName = 
+
+    If (variableNameTerminalNode != null) {
+      { String content As variableName } = variableNameTerminalNode;
     
-    variableName = content;
-  }
+      Return variableName;
+    } 
+
+    Else 
+      ""
+  ;
   
   Return variableName;
 }
 
 String boundVariableNameFromStatementNode(Node statementNode) {
-  String boundVariableName = "";
-  
-  { Nodes childNodes } = statementNode;
-  
-  [ Node firstChildNode ] = childNodes;
+  { Nodes childNodes As statementChildNodes } = statementNode;
 
-  { Boolean terminal } = firstChildNode;
+  [ Node firstStatementChildNode ] = statementChildNodes;
 
-  If (terminal) {
-    { String content } = firstChildNode;
-  
-    If ((content == "∀") || (content == "∃")) {
-      [ _, Node argumentNode ] = childNodes;
-      
-      Node boundVariableNameTerminalNode = nodeQuery(argumentNode, /argument/term/variable/@name);
-    
-      If (boundVariableNameTerminalNode != null) {
-        { String content } = boundVariableNameTerminalNode;
-      
-        boundVariableName = content;
-      }
-    }
-  }
+  { Boolean terminal } = firstStatementChildNode;
+
+  String boundVariableName = 
+
+    If (terminal) 
+      boundVariableNameFromStatementChildNodes(statementChildNodes)
+
+    Else 
+      ""
+  ;
     
   Return boundVariableName;
+}
+
+String boundVariableNameFromStatementChildNodes(Nodes statementChildNodes) {
+  [ Node terminalNode ] = statementChildNodes;
+
+  { String content } = terminalNode;
+
+  String boundVariableName = 
+
+    If ((content == "∀") || (content == "∃")) {
+      [ _, Node argumentNode ] = statementChildNodes;
+
+      String boundVariableName = boundVariableNameFromArgumentNode(argumentNode);
+  
+      Return boundVariableName;
+    }
+    Else
+     ""
+  ;
+
+  Return boundVariableName;
+}
+
+String boundVariableNameFromArgumentNode(Node argumentNode) {
+  Node boundVariableNameTerminalNode = nodeQuery(argumentNode, /argument/term/variable/@name);
+
+  String boundVariableName = 
+
+    If (boundVariableNameTerminalNode != null) {
+      { String content As boundVariableName } = boundVariableNameTerminalNode;
+      
+      Return boundVariableName;
+    }
+
+    Else
+      ""
+  ;
+    
+  Return boundVariableName;
+}
+
+Boolean variableBoundFromVariableNameAndStatementNode(String variableName, Node statementNode) {
+  Nodes statementNodes = nodesQuery(statementNode, //statement);
+
+  Boolean variableBound = Some(statementNodes, Boolean (Node statementNode) {
+    String boundVariableName = boundVariableNameFromStatementNode(statementNode); 
+
+    Boolean variableBound = (boundVariableName == variableName);
+
+    Return variableBound;
+  });
+
+  Return variableBound;
 }
