@@ -22,7 +22,7 @@ Boolean isMetavariableBound(Node frameNode, Node statementNode) {
 }
 
 String metavariableNameFromTermNode(Node frameNode) {
-  Node metavariableNameTerminalNode = nodeQuery(frameNode, /frame/metavariable/@name);
+  Node metavariableNameTerminalNode = nodeQuery(frameNode, "/frame/metavariable/@name");
   
   String metavariableName = 
 
@@ -80,7 +80,7 @@ String boundMetavariableNameFromStatementChildNodes(Nodes statementChildNodes) {
 }
 
 String boundMetavariableNameFromArgumentNode(Node argumentNode) {
-  Node boundMetavariableNameTerminalNode = nodeQuery(argumentNode, /argument/frame/metavariable/@name);
+  Node boundMetavariableNameTerminalNode = nodeQuery(argumentNode, "/argument/frame/metavariable/@name");
 
   String boundMetavariableName = 
 
@@ -98,7 +98,7 @@ String boundMetavariableNameFromArgumentNode(Node argumentNode) {
 }
 
 Boolean metavariableBoundFromMetavariableNameAndStatementNode(String metavariableName, Node statementNode) {
-  Nodes statementNodes = nodesQuery(statementNode, //statement);
+  Nodes statementNodes = nodesQuery(statementNode, "//statement");
 
   Boolean metavariableBound = Some(statementNodes, Boolean (Node statementNode) {
     String boundMetavariableName = boundMetavariableNameFromStatementNode(statementNode); 

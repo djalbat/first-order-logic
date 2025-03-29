@@ -22,7 +22,7 @@ Boolean isVariableBound(Node termNode, Node statementNode) {
 }
 
 String variableNameFromTermNode(Node termNode) {
-  Node variableNameTerminalNode = nodeQuery(termNode, /term/variable/@name);
+  Node variableNameTerminalNode = nodeQuery(termNode, "/term/variable/@name");
   
   String variableName = 
 
@@ -80,7 +80,7 @@ String boundVariableNameFromStatementChildNodes(Nodes statementChildNodes) {
 }
 
 String boundVariableNameFromArgumentNode(Node argumentNode) {
-  Node boundVariableNameTerminalNode = nodeQuery(argumentNode, /argument/term/variable/@name);
+  Node boundVariableNameTerminalNode = nodeQuery(argumentNode, "/argument/term/variable/@name");
 
   String boundVariableName = 
 
@@ -98,7 +98,7 @@ String boundVariableNameFromArgumentNode(Node argumentNode) {
 }
 
 Boolean variableBoundFromVariableNameAndStatementNode(String variableName, Node statementNode) {
-  Nodes statementNodes = nodesQuery(statementNode, //statement);
+  Nodes statementNodes = nodesQuery(statementNode, "//statement");
 
   Boolean variableBound = Some(statementNodes, Boolean (Node statementNode) {
     String boundVariableName = boundVariableNameFromStatementNode(statementNode); 
