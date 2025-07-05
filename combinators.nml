@@ -1,11 +1,11 @@
 Combinator Frame is free in Statement
 Combinator Frame is bound in Statement
 
-Combinator Object is free in Statement
-Combinator Object is bound in Statement
+Combinator Base is free in Statement
+Combinator Base is bound in Statement
 
 Combinator ∀ Frame Statement
 Combinator ∃ Frame Statement
 
-Combinator ∀ Object Statement
-Combinator ∃ Object Statement
+Combinator ∀ Base Statement
+Combinator ∃ Base Statement
