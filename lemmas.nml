@@ -22,6 +22,17 @@ Lemma
 
 Lemma
   Suppose
+    ∃[τ] [τ] |- R :: S
+    [[ρ] |- R :: S] ... r = s
+  Then
+    r = s
+  Proof
+    [τ] is free in [τ] |- R :: S by FreeMetavariable
+  Therefore
+    r = s by MetaExistentialElimination
+
+Lemma
+  Suppose
     m = m
   Then
     ∀n n = n
@@ -60,14 +71,3 @@ Lemma
     n is free in n = l by FreeVariable
   Therefore
     r = s by ExistentialElimination
-
-Lemma
-  Suppose
-    ∃[τ] [τ] |- R :: S
-    [[ρ] |- R :: S] ... r = s
-  Then
-    r = s
-  Proof
-    [τ] is free in [τ] |- R :: S by FreeMetavariable
-  Therefore
-    r = s by MetaExistentialElimination
