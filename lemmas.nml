@@ -5,29 +5,29 @@ Variable n
 Variable r
 Variable s
 
-Metavariable ρ:Frame
-Metavariable τ:Frame
+Metavariable U:Frame
+Metavariable V:Frame
 Metavariable R:Reference
 Metavariable S:Statement
 
 Lemma
   Suppose
-    [ρ] |- R :: S
+    [U] |- R :: S
   Then
-    ∃[τ] [τ] |- R :: S
+    ∃[V] [V] |- R :: S
   Proof
-    [τ] is free in [τ] |- R :: S by FreeMetavariable
+    [V] is 𝘧𝘳𝘦𝘦 in [V] |- R :: S by FreeMetavariable
   Therefore
-    ∃[τ] [τ] |- R :: S by MetaExistentialIntroduction
+    ∃[V] [V] |- R :: S by MetaExistentialIntroduction
 
 Lemma
   Suppose
-    ∃[τ] [τ] |- R :: S
-    [[ρ] |- R :: S] ... r = s
+    ∃[V] [V] |- R :: S
+    [[U] |- R :: S] ... r = s
   Then
     r = s
   Proof
-    [τ] is free in [τ] |- R :: S by FreeMetavariable
+    [V] is 𝘧𝘳𝘦𝘦 in [V] |- R :: S by FreeMetavariable
   Therefore
     r = s by MetaExistentialElimination
 
@@ -37,7 +37,7 @@ Lemma
   Then
     ∀n n = n
   Proof
-    m is free in m = m by FreeVariable
+    m is 𝘧𝘳𝘦𝘦 in m = m by FreeVariable
   Therefore
     ∀n n = n by UniversalIntroduction
 
@@ -47,7 +47,7 @@ Lemma
   Then
     m = m
   Proof
-    m is free in m = m by FreeVariable
+    m is 𝘧𝘳𝘦𝘦 in m = m by FreeVariable
   Therefore
     m = m by UniversalElimination
 
@@ -57,7 +57,7 @@ Lemma
   Then
     ∃n n = l
   Proof
-    n is free in n = l by FreeVariable
+    n is 𝘧𝘳𝘦𝘦 in n = l by FreeVariable
   Therefore
     ∃n n = l by ExistentialIntroduction
 
@@ -68,6 +68,6 @@ Lemma
   Then
     r = s
   Proof
-    n is free in n = l by FreeVariable
+    n is 𝘧𝘳𝘦𝘦 in n = l by FreeVariable
   Therefore
     r = s by ExistentialElimination

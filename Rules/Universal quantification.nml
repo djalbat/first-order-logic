@@ -13,7 +13,7 @@ Rule (UniversalIntroduction,UniversalGeneralisation)
     v is undefined 
     v is missing in P
     P
-    u is free in P
+    u is 𝘧𝘳𝘦𝘦 in P
   Conclusion
     ∀v P[v for u]
 
@@ -23,7 +23,7 @@ Rule (UniversalElimination,UniversalInstantiation)
     v is undefined 
     v is missing in P
     ∀v P[v for u]
-    u is free in P
+    u is 𝘧𝘳𝘦𝘦 in P
   Conclusion
     P
 
@@ -33,7 +33,7 @@ Rule (MetaUniversalIntroduction)
     [V] is undefined 
     [V] is missing in P
     P
-    [U] is free in P
+    [U] is 𝘧𝘳𝘦𝘦 in P
   Conclusion
     ∀ [V] P[[V] for [U]]
 
@@ -43,6 +43,6 @@ Rule (MetaUniversalElimination)
     [V] is undefined 
     [V] is missing in P
     ∀ [V] P[[V] for [U]]
-    [U] is free in P
+    [U] is 𝘧𝘳𝘦𝘦 in P
   Conclusion
     P

@@ -12,7 +12,7 @@ Rule (ExistentialIntroduction,ExistentialGeneralisation)
     u is undefined 
     v is missing in P
     P[v for u]
-    u is free in P
+    u is 𝘧𝘳𝘦𝘦 in P
   Conclusion
     ∃u P
 
@@ -22,7 +22,7 @@ Rule (ExistentialElimination,ExistentialInstantiation)
     v is missing in P
     ∃u P
     [P[v for u]] ... Q
-    u is free in P
+    u is 𝘧𝘳𝘦𝘦 in P
   Conclusion
     Q
 
@@ -31,7 +31,7 @@ Rule (MetaExistentialIntroduction)
     [U] is undefined 
     [V] is missing in P
     P[[V] for [U]]
-    [U] is free in P
+    [U] is 𝘧𝘳𝘦𝘦 in P
   Conclusion
     ∃[U] P
 
@@ -41,6 +41,6 @@ Rule (MetaExistentialElimination)
     [V] is missing in P
     ∃[U] P
     [P[[V] for [U]]] ... Q
-    [U] is free in P
+    [U] is 𝘧𝘳𝘦𝘦 in P
   Conclusion
     Q

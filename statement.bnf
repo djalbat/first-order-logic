@@ -2,7 +2,7 @@
 
                               statement  ::=  ( "∀" | "∃" ) ( frameArgument | argument ) metaArgument 
 
-                                           |  ( frameArgument | argument ) "is" ( "bound" | "free" ) "in" metaArgument
+                                           |  ( frameArgument | argument ) "is" ( "𝘣𝘰𝘶𝘯𝘥" | "𝘧𝘳𝘦𝘦" ) "in" metaArgument
 
                                            ;
 
