@@ -7,7 +7,7 @@ Boolean isMetavariableFree(Node frameNode, Node statementNode) {
 }
 
 Boolean isMetavariableBound(Node frameNode, Node statementNode) {
-  String metavariableName = metavariableNameFromTermNode(frameNode);
+  String metavariableName = metavariableNameFromFrameNode(frameNode);
 
   Boolean metavariableBound = 
 
@@ -21,8 +21,8 @@ Boolean isMetavariableBound(Node frameNode, Node statementNode) {
   Return metavariableBound;
 }
 
-String metavariableNameFromTermNode(Node frameNode) {
-  Node metavariableNameTerminalNode = nodeQuery(frameNode, "/frame/metavariable/@name");
+String metavariableNameFromFrameNode(Node frameNode) {
+  Node metavariableNameTerminalNode = nodeQuery(frameNode, "/frame/declaration!/metavariable!/@name");
   
   String metavariableName = 
 
@@ -80,7 +80,7 @@ String boundMetavariableNameFromStatementChildNodes(Nodes statementChildNodes) {
 }
 
 String boundMetavariableNameFromArgumentNode(Node argumentNode) {
-  Node boundMetavariableNameTerminalNode = nodeQuery(argumentNode, "/argument/frame/metavariable/@name");
+  Node boundMetavariableNameTerminalNode = nodeQuery(argumentNode, "/argument/frame/declaration!/metavariable!/@name");
 
   String boundMetavariableName = 
 
