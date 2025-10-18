@@ -1,11 +1,11 @@
 Combinator Frame is 𝘧𝘳𝘦𝘦 in Statement
 Combinator Frame is 𝘣𝘰𝘶𝘯𝘥 in Statement
 
-Combinator _ is 𝘧𝘳𝘦𝘦 in Statement
-Combinator _ is 𝘣𝘰𝘶𝘯𝘥 in Statement
+Combinator <> is 𝘧𝘳𝘦𝘦 in Statement
+Combinator <> is 𝘣𝘰𝘶𝘯𝘥 in Statement
 
 Combinator ∀ Frame Statement
 Combinator ∃ Frame Statement
 
-Combinator ∀ _ Statement
-Combinator ∃ _ Statement
+Combinator ∀ <> Statement
+Combinator ∃ <> Statement
