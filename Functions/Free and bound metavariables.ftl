@@ -3,7 +3,7 @@ Boolean isMetavariableFree(Node frameNode, Node statementNode) {
 
   Boolean metavariableFree = !metavariableBound;
 
-  Return metavariableFree;
+  return metavariableFree;
 }
 
 Boolean isMetavariableBound(Node frameNode, Node statementNode) {
@@ -11,36 +11,36 @@ Boolean isMetavariableBound(Node frameNode, Node statementNode) {
 
   Boolean metavariableBound = 
 
-    If (metavariableName != "")
+    if (metavariableName != "")
       metavariableBoundFromMetavariableNameAndStatementNode(metavariableName, statementNode)
 
-    Else
+    else
       false
   ;
   
-  Return metavariableBound;
+  return metavariableBound;
 }
 
 String metavariableNameFromFrameNode(Node frameNode) {
-  Node metavariableNameTerminalNode = nodeQuery(frameNode, "/frame/declaration!/metavariable!/@name");
+  Node metavariableNameTerminalNode = nodeQuery(frameNode, "/frame/metavariable!/@name");
   
   String metavariableName = 
 
-    If (metavariableNameTerminalNode != null) {
-      { String content As metavariableName } = metavariableNameTerminalNode;
+    if (metavariableNameTerminalNode != null) {
+      { String content as metavariableName } = metavariableNameTerminalNode;
     
-      Return metavariableName;
+      return metavariableName;
     } 
 
-    Else 
+    else 
       ""
   ;
   
-  Return metavariableName;
+  return metavariableName;
 }
 
 String boundMetavariableNameFromStatementNode(Node statementNode) {
-  { Nodes childNodes As statementChildNodes } = statementNode;
+  { Nodes childNodes as statementChildNodes } = statementNode;
 
   [ Node firstStatementChildNode ] = statementChildNodes;
 
@@ -48,14 +48,14 @@ String boundMetavariableNameFromStatementNode(Node statementNode) {
 
   String boundMetavariableName = 
 
-    If (terminal) 
+    if (terminal) 
       boundMetavariableNameFromStatementChildNodes(statementChildNodes)
 
-    Else 
+    else 
       ""
   ;
     
-  Return boundMetavariableName;
+  return boundMetavariableName;
 }
 
 String boundMetavariableNameFromStatementChildNodes(Nodes statementChildNodes) {
@@ -65,48 +65,48 @@ String boundMetavariableNameFromStatementChildNodes(Nodes statementChildNodes) {
 
   String boundMetavariableName = 
 
-    If ((content == "∀") || (content == "∃")) {
+    if ((content == "∀") || (content == "∃")) {
       [ _, Node argumentNode ] = statementChildNodes;
 
       String boundMetavariableName = boundMetavariableNameFromArgumentNode(argumentNode);
   
-      Return boundMetavariableName;
+      return boundMetavariableName;
     }
-    Else
+    else
      ""
   ;
 
-  Return boundMetavariableName;
+  return boundMetavariableName;
 }
 
 String boundMetavariableNameFromArgumentNode(Node argumentNode) {
-  Node boundMetavariableNameTerminalNode = nodeQuery(argumentNode, "/argument/frame/declaration!/metavariable!/@name");
+  Node boundMetavariableNameTerminalNode = nodeQuery(argumentNode, "/argument/frame/metavariable!/@name");
 
   String boundMetavariableName = 
 
-    If (boundMetavariableNameTerminalNode != null) {
-      { String content As boundMetavariableName } = boundMetavariableNameTerminalNode;
+    if (boundMetavariableNameTerminalNode != null) {
+      { String content as boundMetavariableName } = boundMetavariableNameTerminalNode;
       
-      Return boundMetavariableName;
+      return boundMetavariableName;
     }
 
-    Else
+    else
       ""
   ;
     
-  Return boundMetavariableName;
+  return boundMetavariableName;
 }
 
 Boolean metavariableBoundFromMetavariableNameAndStatementNode(String metavariableName, Node statementNode) {
   Nodes statementNodes = nodesQuery(statementNode, "//statement");
 
-  Boolean metavariableBound = Some(statementNodes, Boolean (Node statementNode) {
+  Boolean metavariableBound = some(statementNodes, Boolean (Node statementNode) {
     String boundMetavariableName = boundMetavariableNameFromStatementNode(statementNode); 
 
     Boolean metavariableBound = (boundMetavariableName == metavariableName);
 
-    Return metavariableBound;
+    return metavariableBound;
   });
 
-  Return metavariableBound;
+  return metavariableBound;
 }

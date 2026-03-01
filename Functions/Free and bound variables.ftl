@@ -3,7 +3,7 @@ Boolean isVariableFree(Node termNode, Node statementNode) {
 
   Boolean variableFree = !variableBound;
 
-  Return variableFree;
+  return variableFree;
 }
 
 Boolean isVariableBound(Node termNode, Node statementNode) {
@@ -11,14 +11,14 @@ Boolean isVariableBound(Node termNode, Node statementNode) {
 
   Boolean variableBound = 
 
-    If (variableIdentitifer != "")
+    if (variableIdentitifer != "")
       variableBoundFromVariableIdentifierAndStatementNode(variableIdentitifer, statementNode)
 
-    Else
+    else
       false
   ;
   
-  Return variableBound;
+  return variableBound;
 }
 
 String variableIdentitiferFromTermNode(Node termNode) {
@@ -26,21 +26,21 @@ String variableIdentitiferFromTermNode(Node termNode) {
   
   String variableIdentitifer = 
 
-    If (variableIdentifierTerminalNode != null) {
-      { String content As variableIdentitifer } = variableIdentifierTerminalNode;
+    if (variableIdentifierTerminalNode != null) {
+      { String content as variableIdentitifer } = variableIdentifierTerminalNode;
     
-      Return variableIdentitifer;
+      return variableIdentitifer;
     } 
 
-    Else 
+    else 
       ""
   ;
   
-  Return variableIdentitifer;
+  return variableIdentitifer;
 }
 
 String boundVariableIdentifierFromStatementNode(Node statementNode) {
-  { Nodes childNodes As statementChildNodes } = statementNode;
+  { Nodes childNodes as statementChildNodes } = statementNode;
 
   [ Node firstStatementChildNode ] = statementChildNodes;
 
@@ -48,14 +48,14 @@ String boundVariableIdentifierFromStatementNode(Node statementNode) {
 
   String boundVariableIdentifier = 
 
-    If (terminal) 
+    if (terminal) 
       boundVariableIdentifierFromStatementChildNodes(statementChildNodes)
 
-    Else 
+    else 
       ""
   ;
     
-  Return boundVariableIdentifier;
+  return boundVariableIdentifier;
 }
 
 String boundVariableIdentifierFromStatementChildNodes(Nodes statementChildNodes) {
@@ -65,18 +65,18 @@ String boundVariableIdentifierFromStatementChildNodes(Nodes statementChildNodes)
 
   String boundVariableIdentifier = 
 
-    If ((content == "∀") || (content == "∃")) {
+    if ((content == "∀") || (content == "∃")) {
       [ _, Node argumentNode ] = statementChildNodes;
 
       String boundVariableIdentifier = boundVariableIdentifierFromArgumentNode(argumentNode);
   
-      Return boundVariableIdentifier;
+      return boundVariableIdentifier;
     }
-    Else
+    else
      ""
   ;
 
-  Return boundVariableIdentifier;
+  return boundVariableIdentifier;
 }
 
 String boundVariableIdentifierFromArgumentNode(Node argumentNode) {
@@ -84,29 +84,29 @@ String boundVariableIdentifierFromArgumentNode(Node argumentNode) {
 
   String boundVariableIdentifier = 
 
-    If (boundVariableIdentityTerminalNode != null) {
-      { String content As boundVariableIdentifier } = boundVariableIdentityTerminalNode;
+    if (boundVariableIdentityTerminalNode != null) {
+      { String content as boundVariableIdentifier } = boundVariableIdentityTerminalNode;
       
-      Return boundVariableIdentifier;
+      return boundVariableIdentifier;
     }
 
-    Else
+    else
       ""
   ;
     
-  Return boundVariableIdentifier;
+  return boundVariableIdentifier;
 }
 
 Boolean variableBoundFromVariableIdentifierAndStatementNode(String variableIdentitifer, Node statementNode) {
   Nodes statementNodes = nodesQuery(statementNode, "//statement");
 
-  Boolean variableBound = Some(statementNodes, Boolean (Node statementNode) {
+  Boolean variableBound = some(statementNodes, Boolean (Node statementNode) {
     String boundVariableIdentifier = boundVariableIdentifierFromStatementNode(statementNode); 
 
     Boolean variableBound = (boundVariableIdentifier == variableIdentitifer);
 
-    Return variableBound;
+    return variableBound;
   });
 
-  Return variableBound;
+  return variableBound;
 }

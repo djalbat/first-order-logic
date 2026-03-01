@@ -35,14 +35,14 @@ Rule (MetaUniversalIntroduction)
     P
     [U] is 𝘧𝘳𝘦𝘦 in P
   Conclusion
-    ∀ [V] P[[V] for [U]]
+    ∀[V] P[[V] for [U]]
 
 Rule (MetaUniversalElimination)
   Premises
     [U] is undefined
     [V] is undefined 
     [V] is missing in P
-    ∀ [V] P[[V] for [U]]
+    ∀[V] P[[V] for [U]]
     [U] is 𝘧𝘳𝘦𝘦 in P
   Conclusion
     P

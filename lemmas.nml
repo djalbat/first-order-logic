@@ -1,33 +1,34 @@
 Variable l
 Variable m
 Variable n
-
+ 
 Variable r
 Variable s
 
-Metavariable U:Frame
-Metavariable V:Frame
+Metavariable F:Frame
+Metavariable G:Frame
+
 Metavariable R:Reference
 Metavariable S:Statement
 
 Lemma
   Suppose
-    [U] |- R :: S
+    [F] |- R :: S
   Then
-    ∃[V] [V] |- R :: S
+    ∃[G] [G] |- R :: S
   Proof
-    [V] is 𝘧𝘳𝘦𝘦 in [V] |- R :: S by FreeMetavariable
+    [G] is 𝘧𝘳𝘦𝘦 in [G] |- R :: S by FreeMetavariable
   Therefore
-    ∃[V] [V] |- R :: S by MetaExistentialIntroduction
+    ∃[G] [G] |- R :: S by MetaExistentialIntroduction
 
 Lemma
   Suppose
-    ∃[V] [V] |- R :: S
-    [[U] |- R :: S] ... r = s
+    ∃[G] [G] |- R :: S
+    [[F] |- R :: S] ... r = s
   Then
     r = s
   Proof
-    [V] is 𝘧𝘳𝘦𝘦 in [V] |- R :: S by FreeMetavariable
+    [G] is 𝘧𝘳𝘦𝘦 in [G] |- R :: S by FreeMetavariable
   Therefore
     r = s by MetaExistentialElimination
 

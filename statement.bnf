@@ -1,6 +1,6 @@
 
 
-                              statement  ::=  ( "∀" | "∃" ) ( frameArgument | argument ) metaArgument 
+                              statement  ::=  ( "∀" | "∃" )<NO_WHITESPACE>( frameArgument | argument ) metaArgument 
 
                                            |  ( frameArgument | argument ) "is" ( "𝘣𝘰𝘶𝘯𝘥" | "𝘧𝘳𝘦𝘦" ) "in" metaArgument
 
