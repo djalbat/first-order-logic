@@ -11,7 +11,7 @@ Metavariable G:Frame
 Metavariable R:Reference
 Metavariable S:Statement
 
-Theorem (one)
+Lemma
   Suppose
     [F] |- R :: S
   Then
@@ -21,7 +21,7 @@ Theorem (one)
   Therefore
     ∃[G] [G] |- R :: S by MetaExistentialIntroduction
 
-Theorem (two)
+Lemma
   Suppose
     ∃[G] [G] |- R :: S
     [[F] |- R :: S] ... r = s
@@ -32,7 +32,7 @@ Theorem (two)
   Therefore
     r = s by MetaExistentialElimination
 
-Theorem (three)
+Lemma
   Suppose
     m = m
   Then
@@ -42,7 +42,7 @@ Theorem (three)
   Therefore
     ∀n n = n by UniversalIntroduction
 
-Theorem (four)
+Lemma
   Suppose
     ∀n n = n
   Then
@@ -52,7 +52,7 @@ Theorem (four)
   Therefore
     m = m by UniversalElimination
 
-Theorem (five)
+Lemma
   Suppose
     m = l
   Then
@@ -62,7 +62,7 @@ Theorem (five)
   Therefore
     ∃n n = l by ExistentialIntroduction
 
-Theorem (six)
+Lemma
   Suppose
     ∃n n = l
     [m = l] ... r = s
