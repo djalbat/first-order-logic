@@ -66,7 +66,7 @@ String boundVariableIdentifierFromStatementChildNodes(Nodes statementChildNodes)
   String boundVariableIdentifier = 
 
     if ((content == "∀") || (content == "∃")) {
-      [ _, Node argumentNode ] = statementChildNodes;
+      [ , , Node argumentNode ] = statementChildNodes;
 
       String boundVariableIdentifier = boundVariableIdentifierFromArgumentNode(argumentNode);
   

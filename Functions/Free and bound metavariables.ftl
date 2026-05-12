@@ -66,7 +66,7 @@ String boundMetavariableNameFromStatementChildNodes(Nodes statementChildNodes) {
   String boundMetavariableName = 
 
     if ((content == "∀") || (content == "∃")) {
-      [ _, Node argumentNode ] = statementChildNodes;
+      [ , , Node argumentNode ] = statementChildNodes;
 
       String boundMetavariableName = boundMetavariableNameFromArgumentNode(argumentNode);
   
