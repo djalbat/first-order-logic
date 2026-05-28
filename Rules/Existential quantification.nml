@@ -7,7 +7,7 @@ Metavariable V:Frame
 Metavariable P:Statement
 Metavariable Q:Statement
 
-Rule (ExistentialIntroduction,ExistentialGeneralisation)
+Rule (ExistentialIntroduction)
   Premises
     u is undefined 
     v is missing in P
@@ -16,7 +16,7 @@ Rule (ExistentialIntroduction,ExistentialGeneralisation)
   Conclusion
     ∃u P
 
-Rule (ExistentialElimination,ExistentialInstantiation)
+Rule (ExistentialElimination)
   Premises
     u is undefined 
     v is missing in P

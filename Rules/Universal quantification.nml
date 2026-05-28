@@ -7,7 +7,7 @@ Metavariable V:Frame
 Metavariable P:Statement
 Metavariable Q:Statement
 
-Rule (UniversalIntroduction,UniversalGeneralisation)
+Rule (UniversalIntroduction)
   Premises
     u is undefined
     v is undefined 
@@ -17,7 +17,7 @@ Rule (UniversalIntroduction,UniversalGeneralisation)
   Conclusion
     ∀v P[v for u]
 
-Rule (UniversalElimination,UniversalInstantiation)
+Rule (UniversalElimination)
   Premises
     u is undefined
     v is undefined 
