@@ -40,7 +40,7 @@ String variableIdentitiferFromTermNode(Node termNode) {
 }
 
 String boundVariableIdentifierFromStatementNode(Node statementNode) {
-  { Nodes childNodes as statementChildNodes } = statementNode;
+  { List<Node> childNodes as statementChildNodes } = statementNode;
 
   [ Node firstStatementChildNode ] = statementChildNodes;
 
@@ -58,7 +58,7 @@ String boundVariableIdentifierFromStatementNode(Node statementNode) {
   return boundVariableIdentifier;
 }
 
-String boundVariableIdentifierFromStatementChildNodes(Nodes statementChildNodes) {
+String boundVariableIdentifierFromStatementChildNodes(List<Node> statementChildNodes) {
   [ Node terminalNode ] = statementChildNodes;
 
   { String content } = terminalNode;
@@ -98,7 +98,7 @@ String boundVariableIdentifierFromArgumentNode(Node argumentNode) {
 }
 
 Boolean variableBoundFromVariableIdentifierAndStatementNode(String variableIdentitifer, Node statementNode) {
-  Nodes statementNodes = nodesQuery(statementNode, "//statement");
+  List<Node> statementNodes = nodesQuery(statementNode, "//statement");
 
   Boolean variableBound = some(statementNodes, Boolean (Node statementNode) {
     String boundVariableIdentifier = boundVariableIdentifierFromStatementNode(statementNode); 

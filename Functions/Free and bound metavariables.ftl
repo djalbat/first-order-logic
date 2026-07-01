@@ -40,7 +40,7 @@ String metavariableNameFromFrameNode(Node frameNode) {
 }
 
 String boundMetavariableNameFromStatementNode(Node statementNode) {
-  { Nodes childNodes as statementChildNodes } = statementNode;
+  { List<Node> childNodes as statementChildNodes } = statementNode;
 
   [ Node firstStatementChildNode ] = statementChildNodes;
 
@@ -58,7 +58,7 @@ String boundMetavariableNameFromStatementNode(Node statementNode) {
   return boundMetavariableName;
 }
 
-String boundMetavariableNameFromStatementChildNodes(Nodes statementChildNodes) {
+String boundMetavariableNameFromStatementChildNodes(List<Node> statementChildNodes) {
   [ Node terminalNode ] = statementChildNodes;
 
   { String content } = terminalNode;
@@ -98,7 +98,7 @@ String boundMetavariableNameFromArgumentNode(Node argumentNode) {
 }
 
 Boolean metavariableBoundFromMetavariableNameAndStatementNode(String metavariableName, Node statementNode) {
-  Nodes statementNodes = nodesQuery(statementNode, "//statement");
+  List<Node> statementNodes = nodesQuery(statementNode, "//statement");
 
   Boolean metavariableBound = some(statementNodes, Boolean (Node statementNode) {
     String boundMetavariableName = boundMetavariableNameFromStatementNode(statementNode); 
