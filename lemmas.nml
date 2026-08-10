@@ -4,34 +4,7 @@ Variable n
  
 Variable r
 Variable s
-
-Metavariable F:Frame
-Metavariable G:Frame
-
-Metavariable R:Reference
-Metavariable S:Statement
-
-Lemma
-  Suppose
-    [F] |- R :: S
-  Then
-    ∃[G] [G] |- R :: S
-  Proof
-    [G] is 𝘧𝘳𝘦𝘦 in [G] |- R :: S by FreeMetavariable
-  Therefore
-    ∃[G] [G] |- R :: S by MetaExistentialIntroduction
-
-Lemma
-  Suppose
-    ∃[G] [G] |- R :: S
-    [[F] |- R :: S] ... r = s
-  Then
-    r = s
-  Proof
-    [G] is 𝘧𝘳𝘦𝘦 in [G] |- R :: S by FreeMetavariable
-  Therefore
-    r = s by MetaExistentialElimination
-
+###
 Lemma
   Suppose
     m = m

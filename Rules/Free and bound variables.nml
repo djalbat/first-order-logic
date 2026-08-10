@@ -17,15 +17,3 @@ Rule (BoundVariable)
     @isVariableBound(u, P)
   Conclusion
     u is 𝘣𝘰𝘶𝘯𝘥 in P
-
-Rule (FreeMetavariable)
-  Premise
-    @isMetavariableFree(U, P)
-  Conclusion
-    [U] is 𝘧𝘳𝘦𝘦 in P
-
-Rule (BoundMetavariable)
-  Premise
-    @isMetavariableBound(U, P)
-  Conclusion
-    [U] is 𝘣𝘰𝘶𝘯𝘥 in P

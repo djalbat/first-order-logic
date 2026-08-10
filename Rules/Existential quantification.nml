@@ -25,22 +25,3 @@ Rule (ExistentialElimination)
     u is 𝘧𝘳𝘦𝘦 in P
   Conclusion
     Q
-
-Rule (MetaExistentialIntroduction)
-  Premises
-    [U] is undefined 
-    [V] is missing in P
-    P[[V] for [U]]
-    [U] is 𝘧𝘳𝘦𝘦 in P
-  Conclusion
-    ∃[U] P
-
-Rule (MetaExistentialElimination)
-  Premises
-    [U] is undefined 
-    [V] is missing in P
-    ∃[U] P
-    [P[[V] for [U]]] ... Q
-    [U] is 𝘧𝘳𝘦𝘦 in P
-  Conclusion
-    Q

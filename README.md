@@ -2,7 +2,7 @@
 
 First order logic for [Occam](https://occam.science).
 
-There are the four rules for introducing and eliminating universal and existential quantification:
+There are the rules for introducing and eliminating universal and existential quantification:
 
 \[
 \frac
@@ -71,11 +71,6 @@ Q
 }
 \quad\small\text{[ExistentialElimination,ExistentialInstantiation]}
 \]
-
-Note that the rules for free variables and metavariables are certainly not adepquate.
-The philosophy behind their inclusion is that they are marginally better than nothing.
-To really assert that a variable or metavariable is free or bound in an arbitrary statement would require some kind of embedded query language that would allow the user to traverse the parse tree.
-Precisely what that language would look like has yet to be decided but there seems no alternative.
 
 ## Contact
 
