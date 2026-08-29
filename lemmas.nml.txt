@@ -4,7 +4,7 @@ Variable n
  
 Variable r
 Variable s
-###
+
 Lemma
   Suppose
     m = m
